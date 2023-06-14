@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="h2">Food menu</h2>
+  <div class="table-responsive">
+    <table class="table table-striped pretty-table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Portion</th>
+        <th>Price</th>
+        <th>Add to order</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let dish of dishes;">
+        <tr>
+          <td>{{dish.nameEn}}</td>
+          <td>{{dish.portion}}</td>
+          <td>{{dish.price}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="onAddDish(dish)">
+              Add
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <a
+      class="btn btn-info"
+      [routerLink]="['/shopping-cart/']"
+    >To shopping cart</a>
+  </div>
+</div>
